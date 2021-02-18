@@ -8,3 +8,7 @@ My intention with this readme is to tell my journey creating the project, what I
 Something before the start, I try to stay KISS, building only the functionality I need, after some time there will be time to improve code, but for now... time is gold.
 
 I Started by cleaning a little bit the repo, deleting some files, also dependencies that I´m not using right now, maybe later, but we´ll see. 
+
+After the cleaning, I was eager to continue, so I created the PR and sqash-merged the code, but, I forgot to run the server and check that was up and running. I know, beginner's error, but no worries, we can fix it!
+
+Well, here we are, coding, so far I have added some basic routes, also improved the structure of the project by implementing more typings, trying to stay simple as possible, but, adding some fancy code. After all, I want to impress you and show you more of what I´m capable of.
