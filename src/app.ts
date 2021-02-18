@@ -2,6 +2,7 @@ import express from "express";
 import compression from "compression";  // compresses requests
 import bodyParser from "body-parser";
 import lusca from "lusca";
+import path from "path";
 
 // Create Express server
 const app = express();
