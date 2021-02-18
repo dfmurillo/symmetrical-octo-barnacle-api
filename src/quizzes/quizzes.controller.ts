@@ -12,6 +12,10 @@ class QuizzesController {
     listQuizzes(req: Request, res: Response) {
         res.status(200).send({ success: true });
     }
+
+    getQuizById(req: Request, res: Response) {
+      res.status(200).send({ success: true, quiz: req.params.quizId });
+    }
 }
 
 export default QuizzesController.getInstance();
