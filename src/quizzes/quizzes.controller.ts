@@ -12,15 +12,25 @@ class QuizzesController {
     }
 
     listQuizzes(request: Request, response: Response) {
-      const some = QuizzesService.getAllQuizzes();
-      console.log("DFM_ ln: 15 __ some", some);
-      response.statusCode = 200;
-      response.json({ success: true });
+      try {
+        const quizzes = QuizzesService.getAllQuizzes();
+        response.statusCode = 200;
+        response.json({ quizzes });
+      } catch(error) {
+        response.statusCode = 404;
+        response.json({ error });
+      }
     }
 
     getQuizById(request: Request, response: Response) {
-      response.statusCode = 200;
-      response.json({ success: true, quiz: request.params.quizId });
+      try {
+        const quiz = QuizzesService.getQuizById(parseInt(request.params.quizId, 10));
+        response.statusCode = 200;
+        response.json({ quiz });
+      } catch(error) {
+        response.statusCode = 404;
+        response.json({ error });
+      }
     }
 }
 

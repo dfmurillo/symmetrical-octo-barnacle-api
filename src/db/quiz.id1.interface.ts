@@ -9,6 +9,10 @@ interface IQuestion {
   answers: IAnswer[]
 }
 
+export interface IMockQuizObject {
+  quizIdMock: number,
+  quizResponse: IQuiz
+}
 
 export interface IQuiz {
   name: string
