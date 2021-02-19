@@ -9,12 +9,14 @@ class QuizzesController {
         return QuizzesController.instance;
     }
 
-    listQuizzes(req: Request, res: Response) {
-        res.status(200).send({ success: true });
+    listQuizzes(req: Request, response: Response) {
+      response.statusCode = 200;
+      response.json({ success: true });
     }
 
-    getQuizById(req: Request, res: Response) {
-      res.status(200).send({ success: true, quiz: req.params.quizId });
+    getQuizById(req: Request, response: Response) {
+      response.statusCode = 200;
+      response.json({ success: true, quiz: req.params.quizId });
     }
 }
 

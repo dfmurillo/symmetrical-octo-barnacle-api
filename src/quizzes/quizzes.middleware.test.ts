@@ -32,7 +32,7 @@ describe("Tests for quizzes middleware", () => {
       }
     };
     const expectedResponse = {
-      "error": "Invalid quiz"
+      error: "Invalid quiz"
     };
 
     QuizzesMiddleware.isQuizIdNumeric(mockRequest as Request, mockResponse as Response, nextFunction);
@@ -46,7 +46,7 @@ describe("Tests for quizzes middleware", () => {
       }
     };
     const expectedResponse = {
-      "error": "Invalid quiz"
+      error: "Invalid quiz"
     };
 
     QuizzesMiddleware.isQuizIdNumeric(mockRequest as Request, mockResponse as Response, nextFunction);
