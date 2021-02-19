@@ -1,4 +1,4 @@
-[
+export default [
     {
         "questionId": 1,
         "correctAnswers": [
@@ -31,4 +31,4 @@
             3
         ]
     }
-]
+];

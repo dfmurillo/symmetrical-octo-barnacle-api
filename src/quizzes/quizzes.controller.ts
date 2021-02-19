@@ -1,4 +1,6 @@
 import { Request, Response } from "express";
+import QuizzesService from "./quizzes.service";
+
 class QuizzesController {
     private static instance: QuizzesController;
 
@@ -9,14 +11,26 @@ class QuizzesController {
         return QuizzesController.instance;
     }
 
-    listQuizzes(req: Request, response: Response) {
-      response.statusCode = 200;
-      response.json({ success: true });
+    listQuizzes(request: Request, response: Response) {
+      try {
+        const quizzes = QuizzesService.getAllQuizzes();
+        response.statusCode = 200;
+        response.json({ quizzes });
+      } catch(error) {
+        response.statusCode = 404;
+        response.json({ error });
+      }
     }
 
-    getQuizById(req: Request, response: Response) {
-      response.statusCode = 200;
-      response.json({ success: true, quiz: req.params.quizId });
+    getQuizById(request: Request, response: Response) {
+      try {
+        const quiz = QuizzesService.getQuizById(parseInt(request.params.quizId, 10));
+        response.statusCode = 200;
+        response.json({ quiz });
+      } catch(error) {
+        response.statusCode = 404;
+        response.json({ error });
+      }
     }
 }
 

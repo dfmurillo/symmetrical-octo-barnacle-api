@@ -1,4 +1,6 @@
-{
+import { IQuiz } from "./quiz.id1.interface";
+
+const Quiz1: IQuiz = {
     "name": "Zombie quiz",
     "questions": [
         {
@@ -104,4 +106,6 @@
             ]
         }
     ]
-}
+};
+
+export default Quiz1;

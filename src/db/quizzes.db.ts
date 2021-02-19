@@ -1,4 +1,6 @@
-[{
+import { IQuizzes } from "./quizzes.interface";
+
+const AllQuizzes: IQuizzes = [{
   "id": 1,
   "name": "Zombie quiz"
 },{
@@ -13,4 +15,6 @@
 },{
   "id": 5,
   "name": "Music quiz"
-}]
+}];
+
+export default AllQuizzes;
