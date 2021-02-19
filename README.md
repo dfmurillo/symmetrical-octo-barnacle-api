@@ -20,3 +20,7 @@ PR (#4)
 Now my next task is to emulate results from a database adding JSON files, and now I´m debating my self if I should create one big file of records, or create multiple files. I think I will choose multiple files, just to spice the project by adding more routes so looks more like a REST API.
 
 I took advantage of the code I was doing and I started to add Unite tests to the middleware and other functions :) I like to create them in a BDD way I feel are more readable therefore easier to understand. I know a little bit out of the scope of this PR, but always some tests are good to season the code [~~ Insert a salt bae gif throwing PRs ~~]
+
+PR (#5)
+Following the code, now I'm going to create the functionality to read JSON files and return the requested data.
+My first task was to organize the DBs, I already had the files with my desired structure, now I improved the code by adding interfaces to the object, also to facilitate the work and make it securer,  I changed the files from JSON to TS exporting the data :). I feel better with that change and the code feels more resilient.
