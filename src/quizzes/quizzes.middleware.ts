@@ -1,19 +1,20 @@
-import express from "express";
+import { Request, Response, NextFunction } from "express";
 
 class QuizzesMiddleware {
     private static instance: QuizzesMiddleware;
 
-    static getInstance() {
+    static getInstance():  QuizzesMiddleware {
         if (!QuizzesMiddleware.instance) {
             QuizzesMiddleware.instance = new QuizzesMiddleware();
         }
         return QuizzesMiddleware.instance;
     }
-    isQuizIdNumeric(req: express.Request, res: express.Response, next: express.NextFunction) {
-      if (Number.isInteger(parseInt(req.params.quizId, 10))) {
+    isQuizIdNumeric(request: Request, response: Response, next: NextFunction): void {
+      if (Number.isInteger(parseInt(request.params.quizId, 10))) {
         next();
       } else {
-        res.status(400).send({error: "Invalid quiz"});
+        response.statusCode = 400;
+        response.json({error: "Invalid quiz"});
       }
     }
 }
