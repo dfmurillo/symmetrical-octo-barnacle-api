@@ -20,7 +20,7 @@ describe("Tests for quizzes middleware", () => {
   });
 
   it("Given we want to get a quiz by id, when calling getQuizById controller, then success is answered", () => {
-    const quizIdToGet = 44;
+    const quizIdToGet = "44";
     mockRequest = {
       params: {
         quizId: quizIdToGet
