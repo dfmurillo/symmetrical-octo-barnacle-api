@@ -1,4 +1,4 @@
-import { IQuiz } from "./quiz.id1.interface";
+import { IQuiz } from "./quiz.id1.db.interface";
 
 const Quiz1: IQuiz = {
     "name": "Zombie quiz",

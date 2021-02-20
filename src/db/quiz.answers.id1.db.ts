@@ -1,4 +1,6 @@
-export default [
+import { IQuizAnswers } from "./quiz.answers.id1.db.interface";
+
+const QuizAnswers1: IQuizAnswers[] = [
     {
         "questionId": 1,
         "correctAnswers": [
@@ -32,3 +34,4 @@ export default [
         ]
     }
 ];
+export default QuizAnswers1;

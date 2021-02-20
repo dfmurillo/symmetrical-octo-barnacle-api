@@ -1,5 +1,7 @@
 import { Request, Response } from "express";
 import QuizzesService from "./quizzes.service";
+import { IAnsweredSchema } from "./quizzes.schema.answered";
+import { ValidatedRequest } from "express-joi-validation";
 
 class QuizzesController {
     private static instance: QuizzesController;
@@ -29,6 +31,16 @@ class QuizzesController {
         response.json({ quiz });
       } catch(error) {
         response.statusCode = 404;
+        response.json({ error });
+      }
+    }
+
+    validateQuiz(request: ValidatedRequest<IAnsweredSchema>, response: Response) {
+      const { quizId, questions } = request.body;
+      try {
+        const quizResult = QuizzesService.validateQuizAnswers(quizId, questions);
+      } catch (error) {
+        response.statusCode = 500;
         response.json({ error });
       }
     }

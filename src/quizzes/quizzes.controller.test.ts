@@ -1,8 +1,8 @@
 import QuizzesController from "./quizzes.controller";
 import QuizzesService from "./quizzes.service";
 import { Request, Response } from "express";
-import { IQuizzes } from "../db/quizzes.interface";
-import { IQuiz } from "../db/quiz.id1.interface";
+import { IQuizzes } from "../db/quizzes.db.interface";
+import { IQuiz } from "../db/quiz.id1.db.interface";
 
 jest.mock("./quizzes.service");
 const MockedQuizzesService = QuizzesService as jest.Mocked<typeof QuizzesService>;

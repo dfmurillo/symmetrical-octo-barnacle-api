@@ -1,4 +1,4 @@
-import { IQuizzes } from "./quizzes.interface";
+import { IQuizzes } from "./quizzes.db.interface";
 
 const AllQuizzes: IQuizzes = [{
   "id": 1,
