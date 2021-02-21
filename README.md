@@ -27,5 +27,5 @@ My first task was to organize the DBs, I already had the files with my desired s
 
 PR (#6)
 Ok, readers, I think I'm almost finishing the backend side (I hope... normally I could forget something...). In this PR I'm planning to add one last route that will receive all the answers from the frontend and send calculate the scoring I'm planning to respond with the quiz, showing the right information and the percentage of success.
-
+I was struggling to test the service because I was including the raw data, so to avoid more complications, I decided to create a DataManager class on the DB folder that is in charge to distribute data, at the end looks more like a DB query like this and now I can mock easier the results! :partyEmoji: 
 

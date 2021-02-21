@@ -30,7 +30,7 @@ describe("Tests for quizzes middleware", () => {
       name: "Quiz 3"
     }];
 
-    MockedQuizzesService.getAllQuizzes.mockReturnValueOnce(quizzes);
+    MockedQuizzesService.getAllQuizzes.mockReturnValue(quizzes);
 
     const expectedResponse = {
       quizzes
@@ -53,7 +53,7 @@ describe("Tests for quizzes middleware", () => {
       }]
     };
 
-    MockedQuizzesService.getQuizById.mockReturnValueOnce(quiz);
+    MockedQuizzesService.getQuizById.mockReturnValue(quiz);
     mockRequest = {
       params: {
         quizId: quizIdToGet

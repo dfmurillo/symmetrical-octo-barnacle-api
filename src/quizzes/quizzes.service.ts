@@ -1,27 +1,13 @@
-import AllQuizzes from "../db/quizzes.db";
-import QuizId1 from "../db/quiz.id1.db";
-import QuizAnswers1 from "../db/quiz.answers.id1.db";
+import DataManager from "../db/data.manager";
 import { IQuizzes } from "../db/quizzes.db.interface";
-import { IQuiz, IMockQuizObject } from "../db/quiz.id1.db.interface";
+import { IQuiz } from "../db/quiz.id1.db.interface";
 import { IQuestionAnswersBody } from "./quizzes.interface";
-import { IQuizAnswersObject } from "../db/quiz.answers.id1.db.interface";
 
 class QuizzesService {
     private static instance: QuizzesService;
-    private includedQuizzes: IMockQuizObject[];
-    private answerToQuizzes: IQuizAnswersObject[];
 
-    constructor() {
-      this.includedQuizzes = [{
-        quizIdMock: 1,
-        quizResponse: QuizId1
-      }];
+    private MAXIMUM_SCORE = 100;
 
-      this.answerToQuizzes = [{
-        quizId: 1,
-        answers: QuizAnswers1
-      }];
-    }
     static getInstance(): QuizzesService {
         if (!QuizzesService.instance) {
             QuizzesService.instance = new QuizzesService();
@@ -33,7 +19,7 @@ class QuizzesService {
      * Service created to get all the Quizzes
      */
     getAllQuizzes(): IQuizzes {
-      return AllQuizzes;
+      return DataManager.getAllQuizzes();
     }
 
     /**
@@ -41,9 +27,7 @@ class QuizzesService {
      * @param quizId 
      */
     getQuizById(quizId: number): IQuiz {
-      const quizToReturn = this.includedQuizzes.filter(
-        ({ quizIdMock }) => quizIdMock === quizId
-      );
+      const quizToReturn = DataManager.getQuizById(quizId);
 
       if (quizToReturn.length < 1) {
         throw new Error(`Quiz ${quizId} don't exist`);
@@ -53,7 +37,20 @@ class QuizzesService {
     }
 
     validateQuizAnswers(quizId: number, questions: IQuestionAnswersBody[]) {
+      const quizToCheck = DataManager.getQuizAnswers(quizId);
 
+      if (quizToCheck.length < 1) {
+        throw new Error(`Quiz ${quizId} don't exist`);
+      }
+      
+      const solvedQuiz = quizToCheck[0].quizAnswers;
+      const valueToAccumulateOnCorrectAnswer = this.MAXIMUM_SCORE / solvedQuiz.length;
+
+      return questions.reduce(
+        (accumulator, currentQuestion, index) => JSON.stringify(solvedQuiz[index]) === JSON.stringify(currentQuestion) 
+          ? accumulator + valueToAccumulateOnCorrectAnswer
+          : accumulator 
+        , 0);
     }
 }
 

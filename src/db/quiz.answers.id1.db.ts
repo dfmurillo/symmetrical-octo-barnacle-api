@@ -3,7 +3,7 @@ import { IQuizAnswers } from "./quiz.answers.id1.db.interface";
 const QuizAnswers1: IQuizAnswers[] = [
     {
         "questionId": 1,
-        "correctAnswers": [
+        "answers": [
             1,
             2,
             3
@@ -11,25 +11,25 @@ const QuizAnswers1: IQuizAnswers[] = [
     },
     {
         "questionId": 2,
-        "correctAnswers": [
+        "answers": [
             4
         ]
     },
     {
         "questionId": 3,
-        "correctAnswers": [
+        "answers": [
             3
         ]
     },
     {
         "questionId": 4,
-        "correctAnswers": [
+        "answers": [
             2
         ]
     },
     {
         "questionId": 5,
-        "correctAnswers": [
+        "answers": [
             3
         ]
     }

@@ -39,6 +39,8 @@ class QuizzesController {
       const { quizId, questions } = request.body;
       try {
         const quizResult = QuizzesService.validateQuizAnswers(quizId, questions);
+        response.statusCode = 200;
+        response.json({ quizResult });
       } catch (error) {
         response.statusCode = 500;
         response.json({ error });

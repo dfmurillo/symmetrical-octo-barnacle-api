@@ -1,9 +1,9 @@
 export interface IQuizAnswers {
   questionId: number
-  correctAnswers: number[]
+  answers: number[]
 }
 
 export interface IQuizAnswersObject {
-  quizId: number,
-  answers: IQuizAnswers[]
+  quizIdMock: number,
+  quizAnswers: IQuizAnswers[]
 }
