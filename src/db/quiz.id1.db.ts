@@ -36,15 +36,15 @@ const Quiz1: IQuiz = {
                     "answer": "Heat"
                 },
                 {
-                    "answerId": 1,
+                    "answerId": 2,
                     "answer": "Movement"
                 },
                 {
-                    "answerId": 1,
+                    "answerId": 3,
                     "answer": "Smell"
                 },
                 {
-                    "answerId": 1,
+                    "answerId": 4,
                     "answer": "Sound"
                 }
             ]
