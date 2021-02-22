@@ -1,11 +1,12 @@
 import { IQuiz } from "./quiz.id1.db.interface";
 
 const Quiz1: IQuiz = {
-    "name": "Zombie quiz",
+    "name": "Zombie quiz 🧟‍♂️",
     "questions": [
         {
             "questionId": 1,
             "question": "Which of the following are ways living humans can be infected by zombies?",
+            "answerType": "multiple",
             "answers": [
                 {
                     "answerId": 1,
@@ -28,6 +29,7 @@ const Quiz1: IQuiz = {
         {
             "questionId": 2,
             "question": "In “The Walking Dead”, what do the survivors theorize most attracts walkers to humans?",
+            "answerType": "single",
             "answers": [
                 {
                     "answerId": 1,
@@ -50,6 +52,7 @@ const Quiz1: IQuiz = {
         {
             "questionId": 3,
             "question": "What is the first thing you must do after the dead have begun to walk the earth?",
+            "answerType": "single",
             "answers": [
                 {
                     "answerId": 1,
@@ -72,6 +75,7 @@ const Quiz1: IQuiz = {
         {
             "questionId": 4,
             "question": "True or False: Zombies can sense pain, but have a high tolerance for it.",
+            "answerType": "single",
             "answers": [
                 {
                     "answerId": 1,
@@ -86,6 +90,7 @@ const Quiz1: IQuiz = {
         {
             "questionId": 5,
             "question": "Which of the following is bad advice to follow if you are in an urban area during a zombie infestation?",
+            "answerType": "single",
             "answers": [
                 {
                     "answerId": 1,

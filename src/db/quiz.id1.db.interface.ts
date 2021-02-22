@@ -6,6 +6,7 @@ interface IAnswer {
 interface IQuestion {
   questionId: number
   question: string
+  answerType: string 
   answers: IAnswer[]
 }
 

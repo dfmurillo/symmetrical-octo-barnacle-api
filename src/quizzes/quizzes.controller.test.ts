@@ -22,13 +22,16 @@ describe("Tests for quizzes middleware", () => {
     it("Given we want to get all quizzes, when calling listQuizzes controller, then success is answered", () => {
       const quizzes: IQuizzes = [{
         id: 11,
-        name: "Quiz 1"
+        name: "Quiz 1",
+        isReady: true
       }, {
         id: 22,
-        name: "Quiz 2"
+        name: "Quiz 2",
+        isReady: false
       }, {
         id: 33,
-        name: "Quiz 3"
+        name: "Quiz 3",
+        isReady: false
       }];
   
       MockedQuizzesService.getAllQuizzes.mockReturnValue(quizzes);
@@ -58,6 +61,7 @@ describe("Tests for quizzes middleware", () => {
         questions: [{
           questionId: 11,
           question: "My fancy question 1",
+          answerType: "someType",
           answers: [{
             answerId: 12,
             answer: "Fancy Answer 1"
