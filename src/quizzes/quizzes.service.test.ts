@@ -12,13 +12,16 @@ describe("Test Quizzes service", () => {
     it("Given we request all quizzes, when we call getAllQuizzes, then all results are answered", () => {
       const quizzes: IQuizzes = [{
         id: 11,
-        name: "Quiz 1"
+        name: "Quiz 1",
+        isReady: true
       }, {
         id: 22,
-        name: "Quiz 2"
+        name: "Quiz 2",
+        isReady: false
       }, {
         id: 33,
-        name: "Quiz 3"
+        name: "Quiz 3",
+        isReady: true
       }];
       
       MockedDataManager.getAllQuizzes.mockReturnValue(quizzes);
@@ -33,6 +36,7 @@ describe("Test Quizzes service", () => {
         questions: [{
           questionId: 11,
           question: "What was the question?",
+          answerType: "anotherAnswer",
           answers: [{
             answerId: 12,
             answer: "this"

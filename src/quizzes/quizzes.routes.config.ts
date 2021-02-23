@@ -12,16 +12,16 @@ export class QuizzesRoutes extends CommonRoutesConfig {
         super(app, "QuizzesRoutes");
     }
     configureRoutes(): Application {
-        this.app.route("/quizzes")
+        this.app.route("/api/quizzes")
             .get(QuizzesController.listQuizzes);
 
-        this.app.route("/quizzes/validate")
+        this.app.route("/api/quizzes/validate")
             .post(
                 validator.body(answeredSchema),
                 QuizzesController.validateQuiz
             );
 
-        this.app.route("/quizzes/:quizId")
+        this.app.route("/api/quizzes/:quizId")
             .all(QuizzesMiddleware.isQuizIdNumeric)
             .get(QuizzesController.getQuizById);
 
