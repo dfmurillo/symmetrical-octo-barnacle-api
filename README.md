@@ -33,3 +33,13 @@ I was struggling to test the service because I was including the raw data, so to
 Last but not least, I created this PR for any change required now that I´m going to integrate the API with the FrontEnd.
 The first chance will be to add a status on all quizzes because I don't think I will do all questions.
 Also, I added `api` as a prefix to the URLs so it's easier to create a proxy in the FrontEnd. 
+
+## How to run the API
+
+I used yarn, but you can use npm if you want.
+
+1. run `yarn install` to add all the dependencies
+2. run `yarn serve` to initialize the API (Heads-up, runs on port 3000)
+3. run `yarn test`to run all the tests
+
+For more scripts, please refer to the package.json
